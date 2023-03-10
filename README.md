@@ -1,3 +1,5 @@
-# Definitions for the luazip library
+[![Luarocks](https://img.shields.io/luarocks/v/mpeterv/luazip?label=Luarocks&logo=Lua)](https://luarocks.org/modules/mpeterv/luazip)
 
-Type definitions for the [luazip](https://github.com/mpeterv/luazip) library.
+# Definitions for the LuaZip library
+
+Type definitions for the [LuaZip](https://github.com/mpeterv/luazip) library.
