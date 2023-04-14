@@ -11,10 +11,14 @@
 ---
 ---Project on luarocks: https://luarocks.org/modules/mpeterv/luazip
 ---HTML documentation: http://mpeterv.github.io/luazip
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 local zip = {}
 
 ---
 ---@return nil|"closed zip file"|"zip file"
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zip.type() end
 
 ---
@@ -25,6 +29,8 @@ function zip.type() end
 ---@param filename string
 ---
 ---@return Zfile
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zip.open(filename) end
 
 ---
@@ -43,14 +49,20 @@ function zip.open(filename) end
 ---@param filename string
 ---
 ---@return Zfile
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zip.openfile(filename) end
 
 ---
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 ---@class Zfile
 zfile = {}
 
 ---
 ---This function closes a zfile opened by `zip.open`
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:close() end
 
 ---
@@ -60,6 +72,8 @@ function zfile:close() end
 ---* `filename`: the full path of a file
 ---* `compressed_size`: the compressed size of the file in bytes
 ---* `uncompressed_size`: the uncompressed size of the file in bytes
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:files() end
 
 ---
@@ -70,6 +84,8 @@ function zfile:files() end
 ---supported mode is "read".
 ---
 ---@param filename string
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:open(filename) end
 
 ---
@@ -89,6 +105,8 @@ function zfile:open(filename) end
 ---@param ... '*a'|'*l'|integer
 ---
 ---@return string|nil
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:read(...) end
 
 ---
@@ -108,10 +126,14 @@ function zfile:read(...) end
 ---it; the call `zfile:seek("set")` sets the position to the beginning of the file (and returns 0);
 ---and the call `zfile:seek("end")` sets the position to the end of the file, and returns its
 ---size.
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:seek(whence, offset) end
 
 ---
 ---This function closes a file opened by `zfile:open`.
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:close() end
 
 ---
@@ -124,6 +146,8 @@ function zfile:close() end
 ---```
 ---
 ---will iterate over all lines of the file.
+---
+---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 function zfile:lines() end
 
 return zip
