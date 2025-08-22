@@ -29,9 +29,13 @@
 ---The definitions are developed in this repository: https://github.com/LuaCATS/luazip
 
 ---
----`LuaZip` is a lightweight Lua extension library that can be used to read files stored inside zip files. It uses `zziplib` to do all the hard work.
+---`LuaZip` is a lightweight Lua extension library that can be used to read
+---files stored inside zip files. It uses `zziplib` to do all the hard work.
 ---
----The API exposed to Lua is very simple and very similiar to the usual file handling functions provided by the I/O Lua standard library. In fact, the API is so similar that parts of this manual are extracted from the Lua manual, copyrighted by Tecgraf, PUC-Rio.
+---The API exposed to Lua is very simple and very similiar to the usual file
+---handling functions provided by the I/O Lua standard library. In fact, the API
+---is so similar that parts of this manual are extracted from the Lua manual,
+---copyrighted by Tecgraf, PUC-Rio.
 ---
 ---History:
 ---
@@ -40,8 +44,8 @@
 ---* Forked from the CVS repository on luaforge.net on Jan. 20, 2010: https://github.com/luaforge/luazip
 ---* Most active fork: https://github.com/mpeterv/luazip
 ---
----Project on luarocks: https://luarocks.org/modules/mpeterv/luazip
----HTML documentation: http://mpeterv.github.io/luazip
+---Project on luarocks: https://luarocks.org/modules/mpeterv/luazip HTML
+---documentation: http://mpeterv.github.io/luazip
 ---
 ---😱 [Types](https://github.com/LuaCATS/luazip/blob/main/library/zip.lua) incomplete or incorrect? 🙏 [Please contribute!](https://github.com/LuaCATS/luazip/pulls)
 local zip = {}
@@ -73,9 +77,8 @@ function zip.type(zfile) end
 ---
 ---Open a zip file and return a new zip file handle.
 ---
----In case of
----error it returns nil and an error message. Unlike `io.open`, there is no
----`mode` parameter, as the only supported mode is "read".
+---In case of error it returns nil and an error message. Unlike `io.open`, there
+---is no `mode` parameter, as the only supported mode is "read".
 ---
 ---__Example:__
 ---
@@ -99,17 +102,17 @@ function zip.open(filename) end
 ---
 ---Open a file and return a file handle.
 ---
----In case of
----error it returns nil and an error message. Unlike `io.open`, there is no
----`mode` parameter, as the only supported mode is `read`.
+---In case of error it returns nil and an error message. Unlike `io.open`, there
+---is no `mode` parameter, as the only supported mode is `read`.
 ---
----This function implements a virtual file system based on optionally compressed files.
----Instead of simply looking for a file at a given path, this function goes recursively up
----through all path separators ("/") looking for zip files there. If it finds a zip file,
----this function use the remaining path to open the requested file.
----The optional parameter `extensions` allows the use of file extensions other than .zip
----during the lookup. It can be a string corresponding to the extension or an indexed table
----with the lookup extensions sequence.
+---This function implements a virtual file system based on optionally compressed
+---files. Instead of simply looking for a file at a given path, this function
+---goes recursively up through all path separators ("/") looking for zip files
+---there. If it finds a zip file, this function use the remaining path to open
+---the requested file. The optional parameter `extensions` allows the use of
+---file extensions other than .zip during the lookup. It can be a string
+---corresponding to the extension or an indexed table with the lookup extensions
+---sequence.
 ---
 ---__Example:__
 ---
@@ -188,8 +191,8 @@ function ZFile:close() end
 ---@field uncompressed_size integer # The uncompressed size of the file in bytes, for example `434654`.
 
 ---
----Return an iterator function that returns a new table containing
----informations about the current file.
+---Return an iterator function that returns a new table containing informations
+---about the current file.
 ---
 ---__Example:__
 ---
@@ -217,10 +220,9 @@ function ZFile:files() end
 ---
 ---Open a file that is stored inside the zip file opened by `zip.open`.
 ---
----The filename may contain the full path of the file contained inside the zip. The
----directory separator must be '/'.
----Unlike `f:open`, there is no `mode` parameter, as the only
----supported mode is "read".
+---The filename may contain the full path of the file contained inside the zip.
+---The directory separator must be '/'. Unlike `f:open`, there is no `mode`
+---parameter, as the only supported mode is "read".
 ---
 ---__Example:__
 ---
@@ -254,9 +256,10 @@ local ZInternalFile = {}
 ---
 ---Read a `file` according to the given formats, which specify what to read.
 ---
----For each format, the function returns a string with the characters read, or nil if it cannot read
----data with the specified format. When called without formats, it uses a default format that reads
----the entire next line (see below).
+---For each format, the function returns a string with the characters read, or
+---nil if it cannot read data with the specified format. When called without
+---formats, it uses a default format that reads the entire next line (see
+---below).
 ---
 ---The available formats are:
 ---
@@ -295,19 +298,21 @@ function ZInternalFile:read(...) end
 ---
 ---Unlike the standard I/O read, the format `"*n"` is not supported.
 ---
----Sets and gets the file position, measured from the beginning of the file, to the position given
----by `offset` plus a base specified by the string `whence`, as follows:
+---Sets and gets the file position, measured from the beginning of the file, to
+---the position given by `offset` plus a base specified by the string `whence`,
+---as follows:
 ---
 ---* `set`: base is position 0 (beginning of the file);
 ---* `cur`: base is current position;
 ---* `end`: base is end of file;
 ---
----In case of success, function `seek` returns the final file position, measured in bytes
----from the beginning of the file. If this function fails, it returns nil, plus an error string.
----The default value for `whence` is `"cur"`, and for `offset` is 0.
----Therefore, the call `zfile:seek()` returns the current file position, without changing
----it; the call `zfile:seek("set")` sets the position to the beginning of the file (and returns 0);
----and the call `zfile:seek("end")` sets the position to the end of the file, and returns its
+---In case of success, function `seek` returns the final file position, measured
+---in bytes from the beginning of the file. If this function fails, it returns
+---nil, plus an error string. The default value for `whence` is `"cur"`, and for
+---`offset` is 0. Therefore, the call `zfile:seek()` returns the current file
+---position, without changing it; the call `zfile:seek("set")` sets the position
+---to the beginning of the file (and returns 0); and the call
+---`zfile:seek("end")` sets the position to the end of the file, and returns its
 ---size.
 ---
 ---__Example:__
